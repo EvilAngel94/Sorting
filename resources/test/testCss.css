@@ -1,0 +1,32 @@
+html {
+  background-color: #e5eaf5;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Roboto, serif;
+  font-size: 22px;
+  height: 100%;
+  width: 100%;
+}
+
+select {
+  font-family: Roboto, serif;
+}
+
+.container::after {
+  height: 100%;
+  width: 100%;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-left {
+  float: left;
+  padding: 5px;
+  width: 35%;
+  height: 95vh;
+}
