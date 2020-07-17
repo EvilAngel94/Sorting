@@ -24,18 +24,30 @@ input.addEventListener('change', () => {
 
 function sortTheFile(fileToBeSorted) {
     console.log(fileToBeSorted)
-
-
-    let arrayOfSplitString = fileToBeSorted.replace(/ /g,'').split(/[{}]/)
-    console.log(arrayOfSplitString);
+    let arrayOfSplitString = fileToBeSorted.replace(/ /g, '').split(/[{}]/)
 
     let sortedArray = createSortedIndividualArrays(arrayOfSplitString);
-    console.log(sortedArray);
 
+    let newlyCreatedSortedArray = presentSortedArray(sortedArray);
+    console.log(newlyCreatedSortedArray)
+    return newlyCreatedSortedArray;
+}
 
-    // let newlyCreatedSortedArray
+function presentSortedArray(sortedArray) {
+    let presentedString = "";
 
-    return fileToBeSorted;
+    for (const arrayEntry of sortedArray) {
+        if (typeof arrayEntry === 'undefined' || arrayEntry === null) {
+
+        } else if (arrayEntry.length === 1 || arrayEntry === " ") {
+            presentedString = presentedString + arrayEntry + " {\n";
+        } else {
+            arrayEntry.forEach(element => {
+                presentedString = presentedString + "  " + element + "\n";
+            })
+        }
+    }
+    return presentedString;
 }
 
 function createSortedIndividualArrays(arrayOfSplitString) {
