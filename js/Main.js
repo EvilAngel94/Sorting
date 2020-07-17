@@ -23,9 +23,22 @@ input.addEventListener('change', () => {
 });
 
 function sortTheFile(fileToBeSorted) {
-    let arrayOfSplitString = fileToBeSorted.split(/[{}]/)
+    console.log(fileToBeSorted)
+
+
+    let arrayOfSplitString = fileToBeSorted.replace(/ /g,'').split(/[{}]/)
     console.log(arrayOfSplitString);
 
+    let sortedArray = createSortedIndividualArrays(arrayOfSplitString);
+    console.log(sortedArray);
+
+
+    // let newlyCreatedSortedArray
+
+    return fileToBeSorted;
+}
+
+function createSortedIndividualArrays(arrayOfSplitString) {
     let sortedArray = new Array(arrayOfSplitString.length)
 
     for (const inputElement of arrayOfSplitString) {
@@ -35,10 +48,6 @@ function sortTheFile(fileToBeSorted) {
         }
         sortedArray.push(splitElement)
     }
-
-    console.log(sortedArray);
-
-    //TODO: Now we need to recreate the new sorted content.
-
-    return fileToBeSorted;
+    return sortedArray;
 }
+
