@@ -9,6 +9,7 @@ Future:
 - JavaScript
 - HTML5
 - SASS (CSS)
+- [Testing Framework](https://jestjs.io/docs/en/getting-started.html)
 
 **Intergration Tools**
 - Codacy (Code coverage and quality)
