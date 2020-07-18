@@ -1,0 +1,25 @@
+{
+  "name": "sorting",
+  "version": "1.0.0",
+  "description": "Sorting a css file inside a block. A simple WebApplication is made with JavaScript, HTML and SASS.",
+  "main": "SortingScript.js",
+  "dependencies": {
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvilAngel94/Sorting.git"
+  },
+  "author": "Michiel de Smet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvilAngel94/Sorting/issues"
+  },
+  "homepage": "https://github.com/EvilAngel94/Sorting#readme"
+}

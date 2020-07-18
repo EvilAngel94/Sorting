@@ -1,2 +1,5 @@
 # Ignore all the .idea directories
 /.idea
+
+# Not necessary to checkin these documents
+/node_modules
