@@ -1,5 +1,6 @@
 # Sorting
-Sorting a css file inside a block. A simple WebApplication is made with JavaScript, HTML and SASS.
+Sorting a CSS file inside a block. A simple WebApplication is made with JavaScript, HTML and CSS. 
+The blockTitle is ignored and kept in the order as given in the file. The content inside the block is sorted alphabetically. 
 
 Future:
 - Adding more sorting possibilities
@@ -8,8 +9,8 @@ Future:
 **Languages**
 - JavaScript
 - HTML5
-- SASS (CSS)
-- [Testing Framework](https://jestjs.io/docs/en/getting-started.html)
+- CSS
+- [Testing Framework](https://jestjs.io/docs/en/getting-started.html)*
 
 **Intergration Tools**
 - Codacy (Code coverage and quality)
@@ -21,3 +22,5 @@ Future:
 
 **Application**
 - Firebase
+
+* Will be implemented lateron. 
