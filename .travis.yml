@@ -1,0 +1,28 @@
+# CI - CD file for the Sorting application
+language: node_js
+
+os:
+  - linux
+  - windows
+  - osx
+dist: trusty
+
+# make use of the latest version of NodeJS
+node_js:
+ - node
+
+# Specifying the branched to be ran on
+branches:
+  only:
+    - master
+    - develop
+  except:
+    - experimental
+
+# Cache
+cache:
+  npm
+
+# Actual script
+script:
+  - npm test
