@@ -11,20 +11,45 @@ canvas {
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
 }
 
+.paragraph {
+  float: left;
+  margin-left: 10vw;
+  margin-top: 10vh;
+}
+
 .title {
+  position: absolute;
   font-size: 10vw;
-  color: white;
+  color: #e5eaf5;
 }
 
 .content {
-  z-index: 1;
+  position: relative;
+  font-size: 18px;
+  color: #e5eaf5;
+  margin-top: 25vh;
 }
+
+.input-position {
+  position: relative;
+  color: #e5eaf5;
+  margin-top: 5vh;
+}
+
+.sortedContent {
+  float: right;
+  margin: 2vh 8vw 2vh 25vw;
+  border: gray solid 2px;
+  height: 95%;
+  width: 600px;
+  opacity: 0.9;
+  border-radius: 8px;
+}
+
