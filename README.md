@@ -17,7 +17,7 @@ Future:
 
 **Intergration Tools**
 - Codacy (Code coverage and quality)*
-- Travis CI (CI / CD)
+- Travis CI (CI / CD*)
 
 **Issue tracking**
 - GitHub (Project)*
@@ -26,4 +26,4 @@ Future:
 **Application**
 - Firebase
 
-* Will be implemented lateron. 
+(*Will be implemented lateron.)
