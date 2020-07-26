@@ -53,9 +53,14 @@ function presentSortedArray(sortedMarkupElementsInArray) {
         } else if (checkIfSearchedWordIsACssKeyWord(sortedMarkupElement[0])) {
             presentedString = presentedString + sortedMarkupElement + " {\n";
         } else {
-            sortedMarkupElement.forEach(element => {
-                presentedString = presentedString + "  " + element + "\n";
-            })
+            sortedMarkupElement.forEach((element, index, sortedMarkupElement) => {
+                if (Object.is(sortedMarkupElement.length - 1, index)) {
+                    presentedString = presentedString + "  " + element + "\n";
+                    presentedString = presentedString + "  " + element + "\n";
+                } else {
+                    presentedString = presentedString + element + "\n";
+                }
+            });
             presentedString = presentedString + "}\n\n"
         }
     }

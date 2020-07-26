@@ -9,7 +9,7 @@
  * @returns sorted arrays based on the alphabet.
  */
 function createSortedArraysForEachSplitArray(fileToBeSorted) {
-    let arrayOfSplitMarkUpElements = fileToBeSorted.replace(/ /g, '').split(/[{}]/)
+    let arrayOfSplitMarkUpElements = fileToBeSorted.replace(/ /g, ' ').split(/[{}]/)
     let sortedArray = new Array(arrayOfSplitMarkUpElements.length)
 
     /*
