@@ -9,7 +9,7 @@ dist: trusty
 
 # make use of the latest version of NodeJS
 node_js:
- - node
+  - node
 
 # Specifying the branched to be ran on
 branches:
@@ -26,3 +26,11 @@ cache:
 # Actual script
 script:
   - npm test
+
+deploy:
+  provider: firebase
+    token:
+      secure: "FIREBASE_TOKEN"
+    message: "Deployment with Travis CI"
+  on:
+   branch: master
