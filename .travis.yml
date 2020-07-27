@@ -41,7 +41,6 @@ deploy:
   provider: firebase
   token:
     secure: "FIREBASE_TOKEN"
-  project: "sorting-application"
   message: "Deployment to firebase with Travis Build ${TRAVIS_BUILD_NUMBER}"
   on:
     branch: master
