@@ -19,6 +19,10 @@ branches:
   except:
     - experimental
 
+# installing the firebase tools necessary for deployment
+before_script:
+  - npm install firebase-tools -g
+
 # Cache
 cache:
   npm
@@ -29,8 +33,8 @@ script:
 
 deploy:
   provider: firebase
-    token:
-      secure: "FIREBASE_TOKEN"
+  token:
+    secure: "FIREBASE_TOKEN"
     message: "Deployment with Travis CI"
   on:
    branch: master
