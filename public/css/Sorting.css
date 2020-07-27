@@ -52,3 +52,16 @@ canvas {
   opacity: 0.9;
   width: 600px;
 }
+
+.wikiLink {
+  bottom: 8px;
+  color: #e5eaf5;
+  font-size: 18px;
+  left: 16px;
+  position: absolute;
+  text-decoration: none;
+}
+
+.wikiLink:visited {
+  color: #e5eaf5;
+}

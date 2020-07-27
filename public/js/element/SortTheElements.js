@@ -9,8 +9,8 @@
  * @returns sorted arrays based on the alphabet.
  */
 function createSortedArraysForEachSplitArray(fileToBeSorted) {
-    let arrayOfSplitMarkUpElements = fileToBeSorted.replace(/ /g, '').split(/[{}]/)
-    let sortedArray = new Array(arrayOfSplitMarkUpElements.length)
+    let arrayOfSplitMarkUpElements = fileToBeSorted.replace(/ /g, ' ').split(/[{}]/);
+    let sortedArray = new Array(arrayOfSplitMarkUpElements.length);
 
     /*
     We're going to loop over the split elements of the CSS file.
@@ -18,11 +18,13 @@ function createSortedArraysForEachSplitArray(fileToBeSorted) {
     Therefore we're checking for the uneven elements of the array, and then we do a sort.
      */
     for (let i = 0; i < arrayOfSplitMarkUpElements.length; i++) {
-        let splitElement = arrayOfSplitMarkUpElements[i].trim().split(/\n/)
+        let splitElement = arrayOfSplitMarkUpElements[i].trim().split(/\n/);
         if (i % 2 === 1) {
+            let element = splitElement[0];
+            splitElement[0] = "  " + element;
             splitElement = splitElement.sort();
         }
-        sortedArray.push(splitElement)
+        sortedArray.push(splitElement);
     }
 
     return removeUnusableElementsFormTheArray(sortedArray);
@@ -36,4 +38,4 @@ function removeUnusableElementsFormTheArray(sortedArray) {
     return temp.filter(String);
 }
 
-export {createSortedArraysForEachSplitArray}
+export {createSortedArraysForEachSplitArray};
