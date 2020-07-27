@@ -19,7 +19,7 @@ function presentSortedArray(sortedMarkupElementsInArray) {
             /*
             This line of code would cover the solo key elements such as .container, #container-id, select and so on
             */
-        } else if (lengtOfOne && (elementContainsPoint || elementContainsHashTag) &&!elementContainsHexColorCode) {
+        } else if (lengtOfOne && (elementContainsPoint || elementContainsHashTag) && !elementContainsHexColorCode) {
             presentedString = presentedString + sortedMarkupElement + " {\n";
 
             /*
@@ -53,12 +53,8 @@ function presentSortedArray(sortedMarkupElementsInArray) {
         } else if (checkIfSearchedWordIsACssKeyWord(sortedMarkupElement[0])) {
             presentedString = presentedString + sortedMarkupElement + " {\n";
         } else {
-            sortedMarkupElement.forEach((element, index, sortedMarkupElement) => {
-                if (Object.is(sortedMarkupElement.length - 1, index)) {
-                    presentedString = presentedString + "  " + element + "\n";
-                } else {
-                    presentedString = presentedString + element + "\n";
-                }
+            sortedMarkupElement.forEach(element => {
+                presentedString = presentedString + element + "\n";
             });
             presentedString = presentedString + "}\n\n"
         }

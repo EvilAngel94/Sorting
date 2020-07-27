@@ -54,12 +54,12 @@ canvas {
 }
 
 .wikiLink {
-  position: absolute;
   bottom: 8px;
-  left: 16px;
-  font-size: 18px;
-  text-decoration: none;
   color: #e5eaf5;
+  font-size: 18px;
+  left: 16px;
+  position: absolute;
+  text-decoration: none;
 }
 
 .wikiLink:visited {
