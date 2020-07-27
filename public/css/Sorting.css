@@ -59,7 +59,7 @@ canvas {
   font-size: 18px;
   left: 16px;
   position: absolute;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .wikiLink:visited {

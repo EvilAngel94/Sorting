@@ -38,7 +38,7 @@ script:
 deploy:
   provider: firebase
   token:
-    secure: FIREBASE_TOKEN
-  message: "Deployment with Travis CI"
+    secure: "FIREBASE_TOKEN"
+  message: "Deployment to firebase with Travis Build ${TRAVIS_BUILD_NUMBER}"
   on:
     branch: master
