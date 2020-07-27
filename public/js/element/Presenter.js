@@ -19,7 +19,7 @@ function presentSortedArray(sortedMarkupElementsInArray) {
             /*
             This line of code would cover the solo key elements such as .container, #container-id, select and so on
             */
-        } else if (lengtOfOne && (elementContainsPoint || elementContainsHashTag)) {
+        } else if (lengtOfOne && (elementContainsPoint || elementContainsHashTag) &&!elementContainsHexColorCode) {
             presentedString = presentedString + sortedMarkupElement + " {\n";
 
             /*
@@ -56,7 +56,6 @@ function presentSortedArray(sortedMarkupElementsInArray) {
             sortedMarkupElement.forEach((element, index, sortedMarkupElement) => {
                 if (Object.is(sortedMarkupElement.length - 1, index)) {
                     presentedString = presentedString + "  " + element + "\n";
-                    presentedString = presentedString + "  " + element + "\n";
                 } else {
                     presentedString = presentedString + element + "\n";
                 }
@@ -82,7 +81,7 @@ function checkIfArrayEntryContainsHexColorCode(markupElements) {
         // go through each pair
         for (const splitElement of splitArray) {
             // if pair matches the hex colour regex it returns true
-            isHexColor = /^#[0-9A-F]{6}$/i.test(splitElement);
+            isHexColor = /^#[0-9A-F]{6}$/i.test(splitElement.trim());
             if (isHexColor) {
                 return isHexColor;
             }
@@ -91,4 +90,4 @@ function checkIfArrayEntryContainsHexColorCode(markupElements) {
     return isHexColor;
 }
 
-export {presentSortedArray}
+export {presentSortedArray, checkIfArrayEntryContainsHexColorCode, checkIfSearchedWordIsACssKeyWord}
