@@ -86,4 +86,4 @@ function checkIfArrayEntryContainsHexColorCode(markupElements) {
     return isHexColor;
 }
 
-export {presentSortedArray, checkIfArrayEntryContainsHexColorCode, checkIfSearchedWordIsACssKeyWord}
+module.exports = { presentSortedArray, checkIfArrayEntryContainsHexColorCode, checkIfSearchedWordIsACssKeyWord }
