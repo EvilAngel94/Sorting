@@ -61,7 +61,3 @@ canvas {
   position: absolute;
   text-decoration: underline;
 }
-
-.wikiLink:visited {
-  color: #e5eaf5;
-}
