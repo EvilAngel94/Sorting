@@ -16,9 +16,10 @@ branches:
   except:
     - experimental
 
-# installing the firebase tools necessary for deployment
+# installing the firebase tools necessary for deployment & prepare the coverage report
 before_script:
   - npm install firebase-tools -g
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh)
 
 # Cache
 cache:

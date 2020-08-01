@@ -3,3 +3,6 @@
 
 # Not necessary to checkin these documents
 /node_modules
+
+# coverage report is not necessary to push too.
+/coverage

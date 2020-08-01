@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/EvilAngel94/Sorting.svg?branch=master)](https://travis-ci.org/EvilAngel94/Sorting)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/811bd9624ba74c0da3fdd7de045b40cc)](https://www.codacy.com/manual/michieldesmet1994/Sorting?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilAngel94/Sorting&amp;utm_campaign=Badge_Grade)
 # Sorting
 [Sorting Webapplication](https://sorting-application.web.app/)
 
