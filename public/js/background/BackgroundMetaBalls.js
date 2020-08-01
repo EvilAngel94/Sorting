@@ -147,8 +147,3 @@ function getAttribLocation(program, name) {
     }
     return attributeLocation;
 }
-
-canvas.onmousemove = function(e) {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-}

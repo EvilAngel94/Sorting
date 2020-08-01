@@ -16,17 +16,22 @@ branches:
   except:
     - experimental
 
-# installing the firebase tools necessary for deployment
-before_script:
-  - npm install firebase-tools -g
-
 # Cache
 cache:
   npm
 
+# installing the firebase tools necessary for deployment & prepare the coverage report
+before_script:
+  - npm install firebase-tools -g
+  - sudo apt-get install jq
+  - curl -LSs "$(curl -LSs https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets | map({name, browser_download_url} | select(.name | endswith(".jar"))) | .[0].browser_download_url')" -o codacy-coverage-reporter-assembly.jar
+
 # Actual script
 script:
-  - npm test
+  - jest --collectCoverage
+
+after_success:
+  - java -jar codacy-coverage-reporter-assembly.jar report -r coverage/lcov.info
 
 # Deployment to Firebase
 deploy:
