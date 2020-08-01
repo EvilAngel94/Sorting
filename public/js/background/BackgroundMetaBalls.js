@@ -2,9 +2,7 @@ const canvas = document.createElement("canvas");
 const width = canvas.width = window.innerWidth * 0.75;
 const height = canvas.height = window.innerHeight * 0.75;
 document.body.appendChild(canvas);
-const gl = canvas.getContext('webgl');
-
-const mouse = {x: 0, y: 0};
+const gl = canvas.getContext("webgl");
 
 const numMetaballs = 30;
 const metaballs = [];
@@ -18,7 +16,7 @@ for (let i = 0; i < numMetaballs; i++) {
         vy: (Math.random() - 0.5) * 3,
         r: radius * 0.75
     });
-}
+};
 
 const vertexShaderSrc = `
 attribute vec2 position;
@@ -62,9 +60,6 @@ gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 
 `;
 
-const vertexShader = compileShader(vertexShaderSrc, gl.VERTEX_SHADER);
-const fragmentShader = compileShader(fragmentShaderSrc, gl.FRAGMENT_SHADER);
-
 const program = gl.createProgram();
 gl.attachShader(program, vertexShader);
 gl.attachShader(program, fragmentShader);
@@ -81,17 +76,17 @@ const vertexDataBuffer = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, vertexDataBuffer);
 gl.bufferData(gl.ARRAY_BUFFER, vertexData, gl.STATIC_DRAW);
 
-const positionHandle = getAttribLocation(program, 'position');
+const positionHandle = getAttribLocation(program, "position");
 gl.enableVertexAttribArray(positionHandle);
 gl.vertexAttribPointer(positionHandle,
     2, // position is a vec2
     gl.FLOAT, // each component is a float
-    gl.FALSE, // don't normalize values
+    gl.FALSE, // don"t normalize values
     2 * 4, // two 4 byte float components per vertex
     0 // offset into each span of vertex data
 );
 
-const metaballsHandle = getUniformLocation(program, 'metaballs');
+const metaballsHandle = getUniformLocation(program, "metaballs");
 
 loop();
 function loop() {
@@ -120,6 +115,9 @@ function loop() {
     requestAnimationFrame(loop);
 }
 
+const vertexShader = compileShader(vertexShaderSrc, gl.VERTEX_SHADER);
+const fragmentShader = compileShader(fragmentShaderSrc, gl.FRAGMENT_SHADER);
+
 function compileShader(shaderSource, shaderType) {
     const shader = gl.createShader(shaderType);
     gl.shaderSource(shader, shaderSource);
@@ -128,14 +126,13 @@ function compileShader(shaderSource, shaderType) {
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
         throw "Shader compile failed with: " + gl.getShaderInfoLog(shader);
     }
-
     return shader;
 }
 
 function getUniformLocation(program, name) {
     const uniformLocation = gl.getUniformLocation(program, name);
     if (uniformLocation === -1) {
-        throw 'Can not find uniform ' + name + '.';
+        throw "Can not find uniform " + name + ".";
     }
     return uniformLocation;
 }
@@ -143,7 +140,7 @@ function getUniformLocation(program, name) {
 function getAttribLocation(program, name) {
     const attributeLocation = gl.getAttribLocation(program, name);
     if (attributeLocation === -1) {
-        throw 'Can not find attribute ' + name + '.';
+        throw "Can not find attribute " + name + ".";
     }
     return attributeLocation;
 }

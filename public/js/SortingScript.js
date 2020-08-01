@@ -20,7 +20,7 @@ function sortTheFile(fileToBeSorted) {
  * @returns sorted arrays based on the alphabet.
  */
 function createSortedArraysForEachSplitArray(fileToBeSorted) {
-    let arrayOfSplitMarkUpElements = fileToBeSorted.replace(/ /g, ' ').split(/[{}]/);
+    let arrayOfSplitMarkUpElements = fileToBeSorted.replace(/ /g, " ").split(/[{}]/);
     let sortedArray = new Array(arrayOfSplitMarkUpElements.length);
 
     /*
@@ -29,7 +29,8 @@ function createSortedArraysForEachSplitArray(fileToBeSorted) {
     Therefore we're checking for the uneven elements of the array, and then we do a sort.
      */
     for (let i = 0; i < arrayOfSplitMarkUpElements.length; i++) {
-        let splitElement = arrayOfSplitMarkUpElements[i].trim().split(/\n/);
+        const splitMarkUpElementArray = arrayOfSplitMarkUpElements[i];
+        let splitElement = splitMarkUpElementArray.trim().split(/\n/);
         if (i % 2 === 1) {
             let element = splitElement[0];
             splitElement[0] = "  " + element;
