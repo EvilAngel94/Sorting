@@ -30,7 +30,7 @@ script:
   - npm test
 
 after_success:
-  - bash <(curl -Ls https://coverage.codacy.com/get.sh) -l JavaScript -r coverage/lcov.info
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) -r coverage/lcov.info
 
 # Deployment to Firebase
 deploy:
