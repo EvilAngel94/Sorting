@@ -45,7 +45,7 @@ canvas {
 
 .sortedContent {
   border-radius: 8px;
-  border: gray solid 2px;
+  border: #cccccc solid 2px;
   float: right;
   height: 95%;
   margin: 2vh 8vw 2vh 25vw;
@@ -60,4 +60,26 @@ canvas {
   left: 16px;
   position: absolute;
   text-decoration: underline;
+}
+
+#drop-area {
+  border: 2px dashed #e5eaf5;
+  border-radius: 20px;
+  width: 500px;
+  height: 200px;
+  font-family: 'Alatsi', sans-serif;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+#drop-area.highlight {
+  border-color: purple;
+  background-color: #cccccc;
+  opacity: 0.9;
+}
+
+.title-drop-area {
+  color: #e5eaf5;
+  font-size: 18px;
+  text-align: center;
 }

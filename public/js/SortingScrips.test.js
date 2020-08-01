@@ -3,7 +3,7 @@ import {
     checkIfSearchedWordIsACssKeyWord,
     createSortedArraysForEachSplitArray,
     presentSortedArray
-} from "./SortingScript.js"
+} from "./SortingScript.js";
 
 ///////////////////////////////////////
 //  checkIfSearchedWordIsACssKeyWord //
@@ -31,7 +31,7 @@ test("iframe is valid htmlKeyword", () => {
 test("Invalid htmlKeyword", () => {
     let result = checkIfSearchedWordIsACssKeyWord("NotKnown");
     expect(result).toBe(false);
-})
+});
 
 ////////////////////////////////////////////
 //  checkIfArrayEntryContainsHexColorCode //

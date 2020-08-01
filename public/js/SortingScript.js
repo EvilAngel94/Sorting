@@ -89,14 +89,14 @@ function presentSortedArray(sortedMarkupElementsInArray) {
             */
         } else if (sortedMarkupElement.length < 10 && (elementContainsPoint || elementContainsHashTag) && !elementContainsHexColorCode) {
             let counter = 1;
-            sortedMarkupElement.forEach(element => {
+            sortedMarkupElement.forEach((element) => {
                 if (counter === sortedMarkupElement.length) {
                     presentedString = presentedString + element + " {\n";
                     return;
                 }
                 presentedString = presentedString + element + "\n";
                 counter++;
-            })
+            });
             /*
              When a special keyword of CSS is present, then these entries will just be regarded as titles of format blocks.
                eg;
@@ -105,17 +105,17 @@ function presentSortedArray(sortedMarkupElementsInArray) {
         } else if (checkIfSearchedWordIsACssKeyWord(sortedMarkupElement[0])) {
             presentedString = presentedString + sortedMarkupElement + " {\n";
         } else {
-            sortedMarkupElement.forEach(element => {
+            sortedMarkupElement.forEach((element) => {
                 presentedString = presentedString + element + "\n";
             });
-            presentedString = presentedString + "}\n\n"
+            presentedString = presentedString + "}\n\n";
         }
     }
     return presentedString;
 }
 
 
-const CSSKeyWords = ["a", "body", "blockquote", "button", "canvas", "cite", "code", "col", "colgroup", "details", "div", "em", "fieldset", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hr", "html", "i", "iframe", "img", "input", "label", "li", "link", "map", "menu", "menuitem", "nav", "ol", "option", "p", "param", "pre", "script", "select", "small", "span", "style", "summary", "table", "td", "template", "textarea", "th", "thead", "tr", "u", "ul", "var", "video"]
+const CSSKeyWords = ["a", "body", "blockquote", "button", "canvas", "cite", "code", "col", "colgroup", "details", "div", "em", "fieldset", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hr", "html", "i", "iframe", "img", "input", "label", "li", "link", "map", "menu", "menuitem", "nav", "ol", "option", "p", "param", "pre", "script", "select", "small", "span", "style", "summary", "table", "td", "template", "textarea", "th", "thead", "tr", "u", "ul", "var", "video"];
 
 function checkIfSearchedWordIsACssKeyWord(searchKeyword) {
     return CSSKeyWords.includes(searchKeyword);

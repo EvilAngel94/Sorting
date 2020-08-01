@@ -16,7 +16,7 @@ for (let i = 0; i < numMetaballs; i++) {
         vy: (Math.random() - 0.5) * 3,
         r: radius * 0.75
     });
-};
+}
 
 const vertexShaderSrc = `
 attribute vec2 position;
@@ -59,6 +59,9 @@ gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 }
 
 `;
+
+const vertexShader = compileShader(vertexShaderSrc, gl.VERTEX_SHADER);
+const fragmentShader = compileShader(fragmentShaderSrc, gl.FRAGMENT_SHADER);
 
 const program = gl.createProgram();
 gl.attachShader(program, vertexShader);
@@ -114,9 +117,6 @@ function loop() {
 
     requestAnimationFrame(loop);
 }
-
-const vertexShader = compileShader(vertexShaderSrc, gl.VERTEX_SHADER);
-const fragmentShader = compileShader(fragmentShaderSrc, gl.FRAGMENT_SHADER);
 
 function compileShader(shaderSource, shaderType) {
     const shader = gl.createShader(shaderType);
