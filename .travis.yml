@@ -30,7 +30,7 @@ script:
   - npm test
 
 after_success:
-  - bash <(curl -Ls https://coverage.codacy.com/get.sh -r coverage/lcov.info)
+  - java -jar codacy-coverage-reporter-assembly.jar report -r coverage/lcov.info
 
 # Deployment to Firebase
 deploy:
