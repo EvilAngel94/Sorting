@@ -2,9 +2,7 @@ const canvas = document.createElement("canvas");
 const width = canvas.width = window.innerWidth * 0.75;
 const height = canvas.height = window.innerHeight * 0.75;
 document.body.appendChild(canvas);
-const gl = canvas.getContext('webgl');
-
-const mouse = {x: 0, y: 0};
+const gl = canvas.getContext("webgl");
 
 const numMetaballs = 30;
 const metaballs = [];
@@ -72,36 +70,41 @@ gl.linkProgram(program);
 gl.useProgram(program);
 
 const vertexData = new Float32Array([
-    -1.0,  1.0, // top left
+    -1.0, 1.0, // top left
     -1.0, -1.0, // bottom left
-    1.0,  1.0, // top right
+    1.0, 1.0, // top right
     1.0, -1.0, // bottom right
 ]);
 const vertexDataBuffer = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, vertexDataBuffer);
 gl.bufferData(gl.ARRAY_BUFFER, vertexData, gl.STATIC_DRAW);
 
-const positionHandle = getAttribLocation(program, 'position');
+const positionHandle = getAttribLocation(program, "position");
 gl.enableVertexAttribArray(positionHandle);
 gl.vertexAttribPointer(positionHandle,
     2, // position is a vec2
     gl.FLOAT, // each component is a float
-    gl.FALSE, // don't normalize values
+    gl.FALSE, // don"t normalize values
     2 * 4, // two 4 byte float components per vertex
     0 // offset into each span of vertex data
 );
 
-const metaballsHandle = getUniformLocation(program, 'metaballs');
+const metaballsHandle = getUniformLocation(program, "metaballs");
 
 loop();
+
 function loop() {
     for (let i = 0; i < numMetaballs; i++) {
         const metaball = metaballs[i];
         metaball.x += metaball.vx;
         metaball.y += metaball.vy;
 
-        if (metaball.x < metaball.r || metaball.x > width - metaball.r) metaball.vx *= -1;
-        if (metaball.y < metaball.r || metaball.y > height - metaball.r) metaball.vy *= -1;
+        if (metaball.x < metaball.r || metaball.x > width - metaball.r) {
+            metaball.vx *= -1;
+        }
+        if (metaball.y < metaball.r || metaball.y > height - metaball.r) {
+            metaball.vy *= -1;
+        }
     }
 
     const dataToSendToGPU = new Float32Array(3 * numMetaballs);
@@ -128,14 +131,13 @@ function compileShader(shaderSource, shaderType) {
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
         throw "Shader compile failed with: " + gl.getShaderInfoLog(shader);
     }
-
     return shader;
 }
 
 function getUniformLocation(program, name) {
     const uniformLocation = gl.getUniformLocation(program, name);
     if (uniformLocation === -1) {
-        throw 'Can not find uniform ' + name + '.';
+        throw "Can not find uniform " + name + ".";
     }
     return uniformLocation;
 }
@@ -143,7 +145,7 @@ function getUniformLocation(program, name) {
 function getAttribLocation(program, name) {
     const attributeLocation = gl.getAttribLocation(program, name);
     if (attributeLocation === -1) {
-        throw 'Can not find attribute ' + name + '.';
+        throw "Can not find attribute " + name + ".";
     }
     return attributeLocation;
 }
