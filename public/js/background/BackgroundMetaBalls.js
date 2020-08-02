@@ -70,9 +70,9 @@ gl.linkProgram(program);
 gl.useProgram(program);
 
 const vertexData = new Float32Array([
-    -1.0,  1.0, // top left
+    -1.0, 1.0, // top left
     -1.0, -1.0, // bottom left
-    1.0,  1.0, // top right
+    1.0, 1.0, // top right
     1.0, -1.0, // bottom right
 ]);
 const vertexDataBuffer = gl.createBuffer();
@@ -92,14 +92,19 @@ gl.vertexAttribPointer(positionHandle,
 const metaballsHandle = getUniformLocation(program, "metaballs");
 
 loop();
+
 function loop() {
     for (let i = 0; i < numMetaballs; i++) {
         const metaball = metaballs[i];
         metaball.x += metaball.vx;
         metaball.y += metaball.vy;
 
-        if (metaball.x < metaball.r || metaball.x > width - metaball.r) metaball.vx *= -1;
-        if (metaball.y < metaball.r || metaball.y > height - metaball.r) metaball.vy *= -1;
+        if (metaball.x < metaball.r || metaball.x > width - metaball.r) {
+            metaball.vx *= -1;
+        }
+        if (metaball.y < metaball.r || metaball.y > height - metaball.r) {
+            metaball.vy *= -1;
+        }
     }
 
     const dataToSendToGPU = new Float32Array(3 * numMetaballs);

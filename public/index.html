@@ -13,12 +13,12 @@
             This project is created to order content of CSS files. In alphabetic order.
             Only the properties are ordered, not classes or ids.
         </p>
+        <div id="drop-area">
+            <span class="title-drop-area">Drop your file</span>
+        </div>
         <!-- file input, to sort the css file -->
         <div class="input-position">
             <input type="file" id="fileSelector"/>
-        </div>
-        <div id="drop-area">
-            <span class="title-drop-area">Drop your file</span>
         </div>
     </div>
     <!-- The final result content -->
@@ -29,6 +29,7 @@
 </div>
 <script src="js/background/BackgroundMetaBalls.js"></script>
 <script type="module" src="js/inputHandler.js"></script>
+<script type="module" src="js/InputDropAndDrag.js"></script>
 <script type="module" src="js/SortingScript.js"></script>
 <script src="/__/firebase/7.16.1/firebase-app.js"></script>
 <script src="/__/firebase/7.16.1/firebase-analytics.js"></script>

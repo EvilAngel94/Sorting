@@ -39,7 +39,7 @@ canvas {
 
 .input-position {
   color: #e5eaf5;
-  margin-top: 5vh;
+  margin-top: 2vh;
   position: relative;
 }
 
@@ -68,13 +68,13 @@ canvas {
   width: 500px;
   height: 200px;
   font-family: 'Alatsi', sans-serif;
-  margin: 100px auto;
   padding: 20px;
+  margin-top: 5vh;
 }
 
 #drop-area.highlight {
   border-color: purple;
-  background-color: #cccccc;
+  background-color: #ccc;
   opacity: 0.9;
 }
 
