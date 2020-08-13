@@ -17,10 +17,10 @@ Future:
 - JavaScript
 - HTML5
 - CSS
-- [Jest JS Testing Framework](https://jestjs.io/docs/en/getting-started.html)*
+- [Jest JS Testing Framework](https://jestjs.io/docs/en/getting-started.html)
 
 **Intergration Tools**
-- Codacy (Code coverage and quality)*
+- Codacy (Code coverage and quality)
 - Travis CI (CI / CD)
 
 **Issue tracking**
