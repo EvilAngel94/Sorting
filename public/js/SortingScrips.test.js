@@ -33,6 +33,11 @@ test("Invalid htmlKeyword", () => {
     expect(result).toBe(false);
 });
 
+test("* is a valid cssKeyword ", () => {
+    let result = checkIfSearchedWordIsACssKeyWord("*");
+    expect(result).toBe(true);
+});
+
 ////////////////////////////////////////////
 //  checkIfArrayEntryContainsHexColorCode //
 ////////////////////////////////////////////
